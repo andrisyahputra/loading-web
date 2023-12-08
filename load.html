@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Load</title>
+  </head>
+  <body>
+    <div
+      id="app"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      "
+    ></div>
+  </body>
+  <script>
+    window.onload = function () {
+      let id = document.getElementById("app");
+      let load = document.createElement("div");
+
+      load.textContent = "Loading";
+      load.style.fontSize = "30px";
+
+      let loaded = setInterval(() => {
+        load.textContent = load.textContent + ".";
+      }, 1000);
+
+      setTimeout(() => {
+        clearInterval(loaded);
+        load.textContent = "Selamat Datang";
+      }, 4000);
+      id.appendChild(load);
+    };
+  </script>
+</html>
